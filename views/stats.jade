@@ -1,0 +1,253 @@
+doctype html(lang='en')
+head
+    meta(charset='utf-8')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |     
+    meta(name='description', content="CropAdvisor - Making Farmer's Life Easy")
+    |     
+    meta(name='author', content='')
+    |     
+    title CropAdvisor - Making Farmer&apos;s Life Easy
+    // Bootstrap Core CSS
+    link(href='../css/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='../css/landing-page.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='../font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    |     
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', rel='stylesheet', type='text/css')
+    
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-83002133-1', 'auto');
+      ga('send', 'pageview');
+      
+  body
+    // Navigation
+    nav.navbar.navbar-default.navbar-fixed-top.topnav(role='navigation')
+      .container.topnav
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+          |                 
+          a.navbar-brand.topnav(href='http://IP:PORT/') CropAdvisor
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='http://www.cropadvisor.site/#about') Home
+            |                     
+            li
+              a(href='http://www.cropadvisor.site/#services') Services
+            |                     
+            li
+              a(href='http://www.cropadvisor.site/#contact') Contact
+            |                     
+            li
+              a(href='http://www.cropadvisor.site/audits/stats') Statistics  
+              
+        // /.navbar-collapse
+      // /.container
+    // Header
+    #curve_chart(style='width: 90%; height: 500px')
+    #bar_chart(style='width: 90%;height: 800px; padding-left: 10%;margin-bottom: 200px;')
+    #excel_data_table
+     // Footer
+    footer
+      .container
+        .row
+          .col-lg-12
+            ul.list-inline
+              li
+                a(href='http://www.cropadvisor.site/') Home
+              |                         
+              li.footer-menu-divider &sdot;
+              |                         
+              li
+                a(href='http://www.cropadvisor.site/#about') About
+              |                         
+              li.footer-menu-divider &sdot;
+              |                         
+              li
+                a(href='http://www.cropadvisor.site/#services') Services
+              |                         
+              li.footer-menu-divider &sdot;
+              |                         
+              li
+                a(href='http://www.cropadvisor.site/#contact') Contact
+              |                     
+              li
+                a(href='http://www.cropadvisor.site/audits/stats') Statistics  
+            |                     
+            p.copyright.text-muted.small Copyright &copy; CropAdvisor 2016. All Rights Reserved
+    // jQuery
+    script(src='../js/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='../js/bootstrap.min.js')
+    
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+    script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript').
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+      // 1
+      var datas = new google.visualization.DataTable();
+      datas.addColumn('string', 'Date');
+      datas.addColumn('number', 'Number of requests');
+      $.get('http://www.cropadvisor.site/audits/getdaycount', function(data, status){
+      //JSON.parse(data);
+      //JSON.stringify(data);
+      console.log(data);
+      console.log(data.length);
+       datas.addRows(data.length);
+      for( var i=1; i < data.length; i++){
+        var dat = data[i].d;
+        console.log(dat);
+        var co = data[i].c;
+        console.log(co);
+        datas.setCell(i, 0, dat);
+        datas.setCell(i, 1, co);
+      }
+      var options = {
+          title: 'Application Usage Statistics',
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          vAxis: {viewWindow: {min: 0}}
+        };
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+      chart.draw(datas, options);
+      });
+      // 2
+            var datas1 = new google.visualization.DataTable();
+            datas1.addColumn('string', 'Page');
+            datas1.addColumn('number', 'Count');
+            $.get('http://www.cropadvisor.site/audits/getpagecount', function(data1, status1){
+            //JSON.parse(data1);
+            //JSON.stringify(data1);
+            console.log(data1);
+            console.log(data1.length);
+             datas1.addRows(data1.length);
+            for( var i=0; i < data1.length; i++){
+              var dat1 = data1[i].croptype;
+              console.log(dat1);
+              var co1 = data1[i].count;
+              console.log(co1);
+              if(dat1 == '1'){
+              dat1 = 'Selecting field';
+              } else if (dat1 == '2'){
+               dat1 = 'Field Preparation';
+              } else if (dat1 == '3'){
+              dat1 = 'Seeds and Categories';
+              }else if (dat1 == '4'){
+                              dat1 = 'Planting';
+                             } else if (dat1 == '5'){
+                             dat1 = 'Water Supply&Management';
+                             }else if (dat1 == '6'){
+                                             dat1 = 'Fertilizer';
+                                            } else if (dat1 == '7'){
+                                            dat1 = 'Crop health and protection';
+                                            }else if (dat1 == '8'){
+                                                            dat1 = 'Field Machinery';
+                                                           } else if (dat1 == '9'){
+                                                           dat1 = 'Harvesting and Utilisation';
+                                                           }else if (dat1 == '10'){
+                                                                           dat1 = 'Labour security and protection';
+                                                                          } else if (dat1 == '11'){
+                                                                          dat1 = 'Documentation and Record Keeping';
+                                                                          }
+              datas1.setCell(i, 0, dat1);
+              datas1.setCell(i, 1, co1);
+            }
+            var options1 = {
+                chart: {
+                          title: 'Page views',
+                        },
+                        hAxis: {
+                          title: 'Page views',
+                          minValue: 0,
+                        },
+                        vAxis: {
+                          title: 'Page'
+                        },
+                        bars: 'horizontal',
+                        axes: {
+                          y: {
+                            0: {side: 'right'}
+                          }
+                        }
+              };
+            var chart1 = new google.visualization.BarChart(document.getElementById('bar_chart'));
+            chart1.draw(datas1, options1);
+            });
+            }
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawChart1);
+      function drawChart1() {
+      google.charts.load('current', {'packages':['table']});
+            var datas2 = new google.visualization.DataTable();
+            datas2.addColumn('string', 'Name');
+            //datas2.addColumn('string', 'District');
+            //datas2.addColumn('string', 'phone');
+            //datas2.addColumn('string', 'Type');
+            //datas2.addColumn('string', 'Date & Time');
+            datas2.addColumn('number', 'Number of views');
+            datas2.addColumn('boolean', 'Name');
+            $.get('http://www.cropadvisor.site/audits/getdetailbycroptypeanduser', function(data2, status2){
+            //JSON.parse(data1);
+            //JSON.stringify(data1);
+            console.log(data2);
+            console.log(data2.length + 1);
+            var arrayOfData = new Array(data2.length);
+            for( var i=0; i < data2.length; i++){
+              var dat2 = data2[i].croptype;
+              console.log(dat2);
+              if(dat2 == '1'){
+              data2[i].croptype = 'Selecting field';
+              } else if (dat2 == '2'){
+               data2[i].croptype = 'Field Preparation';
+              } else if (dat2 == '3'){
+              data2[i].croptype = 'Seeds and Categories';
+              }else if (dat2 == '4'){
+                              data2[i].croptype = 'Planting';
+                             } else if (dat2 == '5'){
+                             data2[i].croptype = 'Water Supply&Management';
+                             }else if (dat2 == '6'){
+                                             data2[i].croptype = 'Fertilizer';
+                                            } else if (dat2 == '7'){
+                                            data2[i].croptype = 'Crop health and protection';
+                                            }else if (dat2 == '8'){
+                                                            data2[i].croptype = 'Field Machinery';
+                                                           } else if (dat2 == '9'){
+                                                           data2[i].croptype = 'Harvesting and Utilisation';
+                                                           }else if (dat2 == '10'){
+                                                                           data2[i].croptype = 'Labour security and protection';
+                                                                          } else if (dat2 == '11'){
+                                                                          data2[i].croptype = 'Documentation and Record Keeping';
+                                                                          }
+             arrayOfData[i] = data2;
+            }
+            console.log([arrayOfData]);
+            datas2.addRows([
+          ['Mike',  {v: 10000, f: '$10,000'}, true],
+          ['Jim',   {v:8000,   f: '$8,000'},  false],
+          ['Alice', {v: 12500, f: '$12,500'}, true],
+          ['Bob',   {v: 7000,  f: '$7,000'},  true]
+        ]);
+            var chart2 = new google.visualization.Table(document.getElementById('excel_data_table'));
+            chart2.draw(datas2, {showRowNumber: true, width: '100%', height: '100%'});
+            });
+      }
