@@ -18,7 +18,9 @@ Following things need to be installed.
 
 ### app.js
 ```
-    app.js in the main entry point for the application. It imports all the third party node modules and bind all the controllers(routes) which are HTTP endpoints. 
+    app.js in the main entry point for the application. 
+    It imports all the third party node modules and bind 
+    all the controllers(routes) which are HTTP endpoints. 
 ```
 ## Installing
 
