@@ -80,10 +80,38 @@ Following things need to be installed.
 
 ### public/routes/index.js
 
-  ** 1 - Endpoint '/'**
+1. Endpoint '/'
  - _Method - GET_
  - _Request params - No_
  - _Return params - index.jade page_
+ 
+2. Endpoint '/PrivacyPolicy'
+ - _Method - GET_
+ - _Request params - No_
+ - _Return params - privacy_policy.jade page_
+ 
+3. Endpoint '/forum'
+ - _Method - GET_
+ - _Request params - No_
+ - _Return params - forum.jade page_
+  
+4. Endpoint '/forum_ind'
+ - _Method - GET_
+ - _Request params - No_
+ - _Return params - forum_ind.jade page_
+ 
+5. Endpoint '/crops'
+ - _Method - GET_
+ - _Request params - 
+    - crop_types | 1-Vegitables, 2-Fruites, 3-if not provided-All_
+ - _Return params - A list of crops accroding to the parameter type_
+ 
+6. Endpoint '/crops'
+ - _Method - POST
+ - _Request params - 
+    - crop_types | 1-Vegitables, 2-Fruites, 3-if not provided-All_
+ - _Return params - A list of crops accroding to the parameter type_
+ - _Note - Audit enabled_
     
 ## Installing
 
