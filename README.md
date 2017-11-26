@@ -80,10 +80,10 @@ Following things need to be installed.
 
 ### public/routes/index.js
 
-   1 - Endpoint '/'
-    * Method - GET
-    * Request params - No
-    * Return params - index.jade page
+  ** 1 - Endpoint '/'**
+ - _Method - GET_
+ - _Request params - No_
+ - _Return params - index.jade page_
     
 ## Installing
 
