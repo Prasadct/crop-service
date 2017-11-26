@@ -1,20 +1,14 @@
-## crop-service
- # Service of CropAdvisor mobile application. 
-
-
-
-# Crop-service
-
+## crop-service\ 
 Central service of the CropAdvisor mobile application. All the endpoints and web views contains in this project.
 
 # Folder structure
-*app.js
-*bi/
-*node_modules/
-*public/
-*routes/
-*views/
-*sq/
+* app.js
+* bi/
+* node_modules/
+* public/
+* routes/
+* views/
+* sq/
 
 ### Prerequisites
 
@@ -31,7 +25,7 @@ Following things need to be installed.
 
 ## License
 
-This project is licensed under the Apache License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache License - see the [LICENSE](LICENSE.md) file for details
 
 ## Acknowledgments
 
