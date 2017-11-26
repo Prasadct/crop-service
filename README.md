@@ -1,7 +1,13 @@
 ## crop-service\ 
 Central service of the CropAdvisor mobile application. All the endpoints and web views contains in this project.
 
-# Folder structure
+## Prerequisites
+
+Following things need to be installed.
+ * Node Version v4.4.7 or higher
+ * MySQL Version 5.7.14 or higher
+
+## Folder structure
 * app.js
 * bi/
 * node_modules/
@@ -10,13 +16,7 @@ Central service of the CropAdvisor mobile application. All the endpoints and web
 * views/
 * sq/
 
-### Prerequisites
-
-Following things need to be installed.
- * Node Version v4.4.7 or higher
- * MySQL Version 5.7.14 or higher
-
-### Installing
+## Installing
 
 
 
