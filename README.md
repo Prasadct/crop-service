@@ -1,4 +1,4 @@
-## crop-service\ 
+## crop-service
 Central service of the CropAdvisor mobile application. All the endpoints and web views contains in this project.
 
 ## Prerequisites
@@ -9,13 +9,17 @@ Following things need to be installed.
 
 ## Folder structure
 * app.js
-* bi/
+* bin/
 * node_modules/
 * public/
 * routes/
 * views/
 * sq/
 
+### app.js
+'''
+    app.js in the main entry point for the application. It imports all the third party node modules and bind all the controllers(routes) which are HTTP endpoints. 
+'''
 ## Installing
 
 
