@@ -34,14 +34,14 @@ Following things need to be installed.
 
 ### node_modules/
   All the imported node modules.
-  #### Followings are the node modules of Crop-service
-    *  express
-    *  path
-    *  favicon
-    *  logger (morgan)
-    *  cookieParser
-    *  bodyParser
-    *  multer
+    #### Followings are the node modules of Crop-service
+        *  express
+        *  path
+        *  favicon
+        *  logger (morgan)
+        *  cookieParser
+        *  bodyParser
+        *  multer
 
 
 ### public/
@@ -73,8 +73,18 @@ Following things need to be installed.
 ### public/stylesheets/
 
   This is the folder to store custome css files.
-    
+   
+### public/routes/
 
+    This folder contains all the Javascripts files which are containing all the HTTP end points. These routers contains all the application logics, database connections and database transaction details.
+
+### public/routes/index.js
+
+   1 - Endpoint '/'
+    * Method - GET
+    * Request params - No
+    * Return params - index.jade page
+    
 ## Installing
 
 
