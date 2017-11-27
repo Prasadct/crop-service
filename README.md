@@ -34,14 +34,14 @@ Following things need to be installed.
 
 ### node_modules/
   All the imported node modules.
-  ###### Followings are the node modules of Crop-service
-     - *express
-     - *path
-     - *favicon
-     - *logger (morgan)
-     - *cookieParser
-     - *bodyParser
-     - *multer
+  ###### Followings are the imported node modules of Crop-service
+  - _express
+  - _path   
+  - _favicon
+  - _logger (morgan)
+  - _cookieParser
+  - _bodyParser
+  - _multer
 
 
 ### public/
