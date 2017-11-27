@@ -76,7 +76,7 @@ Following things need to be installed.
    
 ### public/routes/
 
-    This folder contains all the Javascripts files which are containing all the HTTP end points. These routers contains all the application logics, database connections and database transaction details.
+  This folder contains all the Javascripts files which are containing all the HTTP end points. These routers contains all the application logics, database connections and database transaction details.
 
 ### public/routes/index.js
 
