@@ -102,17 +102,88 @@ Following things need to be installed.
  
 5. Endpoint '/crops'
  - _Method - GET_
- - _Request params - 
+ - _Request params_
     - crop_types | 1-Vegitables, 2-Fruites, 3-if not provided-All_
  - _Return params - A list of crops accroding to the parameter type_
  
 6. Endpoint '/crops'
- - _Method - POST
- - _Request params - 
+ - _Method - POST_
+ - _Request params_ 
     - crop_types | 1-Vegitables, 2-Fruites, 3-if not provided-All_
  - _Return params - A list of crops accroding to the parameter type_
  - _Note - Audit enabled_
-    
+ 
+### public/routes/details.js
+1. Endpoint '/details/'
+ - _Method - GET_
+ - _Request params_ 
+    - crop detail page id | Integer values_
+ - _Return params - Corresponding detail page .jade_
+ 
+### public/routes/uploads.js
+1. Endpoint '/uploads/'
+ - _Method - GET_
+ - _Request params_ No_
+ - _Return params - JSON Ok response_
+ 
+2. Endpoint '/uploads/forum_mail/'
+ - _Method - GET_
+ - _Request params_ 
+    - user phone id_
+ - _Return params - JSON Response - List of quaries of the requested user_
+ 
+3. Endpoint '/uploads/upload/'
+ - _Method - GET_
+ - _Request params_ No_
+ - _Return params - Returns a HTML form_ 
+
+4. Endpoint '/uploads/diseaseimage/'
+ - _Method - POST_
+ - _Request params_ Image file_
+ - _Return params - JSON Success or Error message_
+ - _Note - Testing version of image upload function_
+ 
+5. Endpoint '/uploads/uploadimage1/'
+ - _Method - POST_
+ - _Request params_ Image file_
+ - _Return params - JSON Success or Error message_
+ - _Note - Image upload function_
+
+6. Endpoint '/uploads/1/'
+ - _Method - GET_
+ - _Request params_ No_
+ - _Return params - Index page_
+ - _Note - Testing end point_
+ 
+7. Endpoint '/uploads/getposts/'
+ - _Method - GET_
+ - _Request params_ 
+     - User phone id_
+ - _Return params - List of user created queries in descending order by created time_
+ 
+8. Endpoint '/uploads/updateresponse/'
+ - _Method - POST_
+ - _Request params_ 
+     - Username
+     - Password
+     - Response_
+ - _Return params - HTTP JSON Success or Error message_
+ - _Note - Response is provided by administrative users which are allowed provide answeres for user generated queries._
+
+9. Endpoint '/uploads/updateresponse-ind/'
+ - _Method - POST_
+ - _Request params_ 
+     - User phone id
+     - Response_
+ - _Return params - HTTP JSON Success or Error message_
+ - _Note - Response is provided by the mobile user for the queries which are submitted by user itself._
+
+9. Endpoint '/uploads/getresponse/'
+ - _Method - POST_
+ - _Request params_ 
+     - Post id_
+ - _Return params - Requested query details_
+ 
 ## Installing
 
 
