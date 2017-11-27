@@ -114,6 +114,7 @@ Following things need to be installed.
  - _Note - Audit enabled_
  
 ### public/routes/details.js
+
 1. **Endpoint '/details/'**
  - _Method - GET_
  - _Request params_ 
@@ -121,6 +122,7 @@ Following things need to be installed.
  - _Return params - Corresponding detail page .jade_
  
 ### public/routes/uploads.js
+
 1. **Endpoint '/uploads/'**
  - _Method - GET_
  - _Request params_ No_
@@ -178,11 +180,57 @@ Following things need to be installed.
  - _Return params - HTTP JSON Success or Error message_
  - _Note - Response is provided by the mobile user for the queries which are submitted by user itself._
 
-9. **Endpoint '/uploads/getresponse/'**
+10. **Endpoint '/uploads/getresponse/'**
  - _Method - POST_
  - _Request params_ 
      - Post id_
  - _Return params - Requested query details_
+ 
+### public/routes/users.js
+
+1. **Endpoint '/users/'**
+ - _Method - GET_
+ - _Request params_  No_
+ - _Return params - Text response_
+ - _Note - Test end point_
+ 
+2. **Endpoint '/users/updateuser/'**
+ - _Method - POST_
+ - _Request params_ 
+     - Phone id
+     - Name
+     - Phone number
+     - District
+     - Address_
+ - _Return params - HTTP JSON Success or Error message_
+  
+### public/routes/audits.js
+
+1. **Endpoint '/audits/stats/'**
+ - _Method - GET_
+ - _Request params_  No_
+ - _Return params - stats.jade page_
+ 
+2. **Endpoint '/audits/getdaycount/'**
+ - _Method - GET_
+ - _Request params_ No_
+ - _Return params - Daily accessed count of the service_
+  
+3. **Endpoint '/audits/getpagecount/'**
+ - _Method - GET_
+ - _Request params_ No_
+ - _Return params - Accessed count of each page_
+ 
+4. **Endpoint '/audits/getalluserdetals/'**
+ - _Method - GET_
+ - _Request params_ No_
+ - _Return params - All user details plus page access details of each user_
+ 
+5. **Endpoint '/audits/getdetailbycroptypeanduser/'**
+ - _Method - GET_
+ - _Request params_ No_
+ - _Return params - User's access details for each crop_
+
  
 ## Installing
 
