@@ -35,13 +35,13 @@ Following things need to be installed.
 ### node_modules/
   All the imported node modules.
   ###### Followings are the imported node modules of Crop-service
-  - _express
-  - _path   
-  - _favicon
-  - _logger (morgan)
-  - _cookieParser
-  - _bodyParser
-  - _multer
+  - _express_
+  - _path_   
+  - _favicon_
+  - _logger (morgan)_
+  - _cookieParser_
+  - _bodyParser_
+  - _multer_
 
 
 ### public/
@@ -231,19 +231,24 @@ Following things need to be installed.
  - _Request params_ No_
  - _Return params - User's access details for each crop_
 
- 
-## Installing
+### sql/
+    Constains all the DDLs.
 
-
-
+### Views
+    All the front-end views. 
+    
 ## Deployment
-
+  1. Create a separate database and run all the DDLs.
+  2. Clone the project into a specific folder.
+  3. Run app.js file.
 
 ## License
 
 This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
+
+Special thanks to (http://lirneasia.net) and (https://www.doa.gov.lk).
 
 
  
