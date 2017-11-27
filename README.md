@@ -248,7 +248,7 @@ This project is licensed under the Apache License - see the [LICENSE](LICENSE) f
 
 ## Acknowledgments
 
-Special thanks to (http://lirneasia.net) and (https://www.doa.gov.lk).
+Special thanks to [LINEasia](http://lirneasia.net) and [Department of Agriculture - Sri Lanka](https://www.doa.gov.lk).
 
 
  
